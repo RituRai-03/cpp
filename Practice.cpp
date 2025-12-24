@@ -1,6 +1,6 @@
-#include <iostream>
-#include <vector>
-using namespace std;
+// #include <iostream>
+// #include <vector>
+// using namespace std;
 
 
 
@@ -520,43 +520,200 @@ You can return the answer in any order.*/
 // }   
 
 
+// #include <iostream>
+// using namespace std;
+
+// int main() {
+//     int n;
+//     cout << "Enter size of array: ";
+//     cin >> n;
+
+//     int arr[100];   // simple fixed-size array
+
+//     cout << "Enter elements: ";
+//     for (int i = 0; i < n; i++) {
+//         cin >> arr[i];
+//     }
+
+//     int smallest = arr[0];
+//     int secondSmallest = arr[1];
+
+//     // Ensure smallest < secondSmallest
+//     if (secondSmallest < smallest) {
+//         int temp = smallest;
+//         smallest = secondSmallest;
+//         secondSmallest = temp;
+//     }
+
+//     // Find second smallest
+//     for (int i = 2; i < n; i++) {
+//         if (arr[i] < smallest) {
+//             secondSmallest = smallest;
+//             smallest = arr[i];
+//         }
+//         else if (arr[i] < secondSmallest && arr[i] != smallest) {
+//             secondSmallest = arr[i];
+//         }
+//     }
+
+//     cout << "Second smallest element: " << secondSmallest;
+
+//     return 0;
+// }
+
+
+// A digital lock uses a security string . For verification, the sysytem reverse 
+// the string and compares it. Your task is to reverse the given string.
+
+
+// #include<iostream>
+// #include <algorithm>
+// using namespace std;
+
+// int main(){
+//     string s;
+//     cout<<"Enter the security string: ";
+//     cin>>s;
+
+//     reverse(s.begin(), s.end());
+
+//     cout << "Reversed string: " << s << endl;
+
+//     return 0;
+
+// }
+
+
+// teacher wants to analyze student performance. You are requiredto store the marks of 
+// 5 subjects in an array, calculate the average marks, and store the result in a vector.
+
+
+// #include <iostream>
+// #include <vector>
+// using namespace std;
+
+//  int main(){
+//     int marks[5];
+//     int sum =0;
+
+//     cout << "Enter marks of 5 subjects: ";
+//     for (int i=0; i<5; i++){
+//         cin >> marks[i];
+//         sum += marks[i];
+//     }
+//     double average = sum / 5.0;
+//     vector<double> results;
+//     results.push_back(average);
+//     cout << "Average marks: " << average << endl;
+//     return 0;
+//  }
+
+// Given a number N and a natursl number K>0. Concatenate N,K times. Then repeatedly add 
+// all the digits of the resultant number, until the result has only a single digit.
+
+
+
+
+// #include <iostream>
+// #include <string>
+
+// using namespace std;
+
+
+// int getSingleDigit(string N, long long K) {
+//     long long digitSumN = 0;
+
+    
+//     for (char c : N) {
+//         digitSumN += (c - '0');
+//     }
+
+    
+//     long long totalSum = digitSumN * K;
+
+    
+//     if (totalSum == 0) return 0;
+    
+//     int result = totalSum % 9;
+//     return (result == 0) ? 9 : result;
+// }
+
+// int main() {
+//     string N;
+//     long long K;
+
+//     cout << "Enter number N: ";
+//     cin >> N;
+//     cout << "Enter number of concatenations K: ";
+//     cin >> K;
+
+//     cout << "The single digit result is: " << getSingleDigit(N, K) << endl;
+
+//     return 0;
+// }
+
+
+
+// Write a Program to read a word from the console, concatenate "a student" to it, and print it back to the console.
+
+// #include <iostream>
+// #include <string>
+// using namespace std;
+
+// int main(){
+//     string word;
+//     cout << "Enter a word: ";
+//     cin >> word;
+
+//     string result = word + " a student";
+
+//     cout << "Result: " << result << endl;
+
+//     return 0;
+// }
+
+
+// Given a positive number X. Find all jumping numbers less than or equal to X.
+// A number is called a jumping number if all adjacent digits in it differ by 1.
+// All single digit numbers are considered as jumping numbers.
+
+
+// Read three integers from the console and print their product.
+
+
+// #include <iostream>
+// using namespace std;
+// int main(){
+//     int a, b, c;
+//     cout << "Enter three integers: ";
+//     cin >> a >> b >> c;
+
+//     int product = a * b * c;
+
+//     cout << "Product: " << product << endl;
+
+//     return 0;
+// }
+
+
+// Read name, age and roll number from three different lines and print them in a single line.
+
 #include <iostream>
+#include <string>
 using namespace std;
+int main(){
+    string name;
+    int age;
+    int rollNumber;
 
-int main() {
-    int n;
-    cout << "Enter size of array: ";
-    cin >> n;
+    cout << "Enter name: ";
+    getline(cin, name);
+    cout << "Enter age: ";
+    cin >> age;
+    cout << "Enter roll number: ";
+    cin >> rollNumber;
 
-    int arr[100];   // simple fixed-size array
-
-    cout << "Enter elements: ";
-    for (int i = 0; i < n; i++) {
-        cin >> arr[i];
-    }
-
-    int smallest = arr[0];
-    int secondSmallest = arr[1];
-
-    // Ensure smallest < secondSmallest
-    if (secondSmallest < smallest) {
-        int temp = smallest;
-        smallest = secondSmallest;
-        secondSmallest = temp;
-    }
-
-    // Find second smallest
-    for (int i = 2; i < n; i++) {
-        if (arr[i] < smallest) {
-            secondSmallest = smallest;
-            smallest = arr[i];
-        }
-        else if (arr[i] < secondSmallest && arr[i] != smallest) {
-            secondSmallest = arr[i];
-        }
-    }
-
-    cout << "Second smallest element: " << secondSmallest;
+    cout << "Name: " << name << ", Age: " << age << ", Roll Number: " << rollNumber << endl;
 
     return 0;
 }
