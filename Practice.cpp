@@ -698,22 +698,60 @@ You can return the answer in any order.*/
 
 // Read name, age and roll number from three different lines and print them in a single line.
 
+// #include <iostream>
+// #include <string>
+// using namespace std;
+// int main(){
+//     string name;
+//     int age;
+//     int rollNumber;
+
+//     cout << "Enter name: ";
+//     getline(cin, name);
+//     cout << "Enter age: ";
+//     cin >> age;
+//     cout << "Enter roll number: ";
+//     cin >> rollNumber;
+
+//     cout << "Name: " << name << ", Age: " << age << ", Roll Number: " << rollNumber << endl;
+
+//     return 0;
+// }
+
+//Pattern Printing
+
 #include <iostream>
-#include <string>
 using namespace std;
-int main(){
-    string name;
-    int age;
-    int rollNumber;
 
-    cout << "Enter name: ";
-    getline(cin, name);
-    cout << "Enter age: ";
-    cin >> age;
-    cout << "Enter roll number: ";
-    cin >> rollNumber;
+int main() {
+  int number;
+  cin >> number;
 
-    cout << "Name: " << name << ", Age: " << age << ", Roll Number: " << rollNumber << endl;
+  for (int i = 0; i < number; i++) {
+    for (int j = 0; j < (2*number); j++) {
+    
+      if (i >= (2*number-1)-j)
+        cout << "*";
+      else
+        cout << " ";
+    }
+    cout << endl;
+  }
 
-    return 0;
+  for (int i = 0; i < number; i++) {
+    for (int j = 0; j < (2*number); j++) {
+   
+      if((i+number) <= j)
+        cout << "*";
+      else
+        cout << " ";
+    }
+    cout << endl;
+  }
+  return 0;
 }
+
+
+
+
+
