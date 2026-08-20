@@ -4,6 +4,9 @@
 //1.4 Evaluate an Expression using stack : 1) Evaluate Postfix Exp
 
 
+
+                                //STACK USING ARRAY
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -126,4 +129,115 @@ class ArrayStack {
       }
       
 
+
+                                 //STACK USING LINKED LIST 
+
+
       
+
+#include <iostream>++
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+    Node(int val) : data(val), next(nullptr) {}
+};
+
+class LinkedListStack {
+private:
+    Node* top;
+
+public:
+    LinkedListStack() {
+        top = nullptr;
+    }
+
+    ~LinkedListStack() {
+        while (!isEmpty()) {
+            pop();
+        }
+    }
+
+    void push(int x) {
+        Node* newNode = new Node(x);
+        newNode->next = top;
+        top = newNode;
+    }
+
+    int pop() {
+        if (isEmpty()) {
+            cout << "Stack Underflow" << endl;
+            return -1;
+        }
+        Node* temp = top;
+        int poppedVal = temp->data;
+        top = top->next;
+        delete temp;
+        return poppedVal;
+    }
+
+    int peek() {
+        if (isEmpty()) {
+            cout << "Stack is empty" << endl;
+            return -1;
+        }
+        return top->data;
+    }
+
+    bool isEmpty() {
+        return top == nullptr;
+    }
+
+    void display() {
+        if (isEmpty()) {
+            cout << "Stack is empty, nothing to display" << endl;
+            return;
+        }
+        cout << "\nCurrent Stack Elements:";
+        Node* temp = top;
+        while (temp != nullptr) {
+            cout << "\n" << temp->data;
+            temp = temp->next;
+        }
+        cout << endl;
+    }
+};
+
+int main() {
+    LinkedListStack s;
+    int choice = 0, x;
+
+    while (choice != 5) {
+        cout << "\n\n********* Stack Operations Using Linked List *********\n";
+        cout << "1. Push\n2. Pop\n3. Display\n4. Peek\n5. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                cout << "Enter element to insert: ";
+                cin >> x;
+                s.push(x);
+                s.display();
+                break;
+            case 2:
+                cout << "Deleted item: " << s.pop() << endl;
+                s.display();
+                break;
+            case 3:
+                s.display();
+                break;
+            case 4:
+                cout << "Top element: " << s.peek() << endl;
+                break;
+            case 5:
+                cout << "Exiting system..." << endl;
+                break;
+            default:
+                cout << "Invalid choice! Enter options 1 to 5.";
+        }
+    }
+    return 0;
+
+}
