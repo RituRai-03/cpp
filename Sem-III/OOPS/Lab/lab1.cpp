@@ -4,35 +4,38 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class student {
+class student
+{
     string name;
     int roll_no;
     int sec;
+
 public:
-    void input() {
-        cout << "Enter name: ";
+    void input()
+    {
+        cout << "Enter Name: ";
         // cin.ignore();
-        getline(cin >> ws,name);
-        cout << "Enter roll number: ";
+        getline(cin >> ws, name);
+        cout << "Enter Roll Number: ";
         cin >> roll_no;
         cout << "Enter Section: ";
         cin >> sec;
     }
 
-    void display() {
+    void display()
+    {
         cout << "Name: " << name << endl;
         cout << "Roll Number: " << roll_no << endl;
         cout << "Section: " << sec << endl;
     }
-
 };
 
-int main() {
+int main()
+{
     student s;
-    s.input();    
-    // s.display();
+    s.input();
+    cout << endl
+         << " ---Student Details--- " << endl;    
+    s.display();
     return 0;
 }
-
-
-
