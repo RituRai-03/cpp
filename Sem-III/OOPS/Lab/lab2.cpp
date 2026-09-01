@@ -1,68 +1,112 @@
 // Develop a program to demonstrate parameter passing techniques (call by value, reference, and address) 
 // and analyze their effects on variable modification.	
 
-#include <bits/stdc++.h>
-using namespace std;
+// #include <bits/stdc++.h>
+// using namespace std;
 
-class Addition {
-    private:
-      int a,b;
-    public:
-      void setData(int a1, int b1){
-        a=a1;
-        b=b1;
-      }
+// class Addition {
+//     private:
+//       int a,b;
+//     public:
+//       void setData(int a1, int b1){
+//         a=a1;
+//         b=b1;
+//       }
       
-      //Overloaded function
-      int add(){
-        return a + b;
-      }
+//       //Overloaded function
+//       int add(){
+//         return a + b;
+//       }
 
-      //Call by Value
+//       //Call by Value
 
-      int addByValue(int x, int y){
-        return x + y;   
-      }
+//       int addByValue(int x, int y){
+//         return x + y;   
+//       }
 
-      //Call by Reference
+//       //Call by Reference
 
-      int addByReference(int &x, int &y){
-        int temp = x + y;
-        x = x + 10;
-        y = y + 10;
-        return temp;
-      }
+//       int addByReference(int &x, int &y){
+//         int temp = x + y;
+//         x = x + 10;
+//         y = y + 10;
+//         return temp;
+//       }
 
-      //Call by Address
+//       //Call by Address
 
-      int addByAddress(int *x, int *y){
-        int temp = *x + *y;
-        *x = *x + 10;
-        *y = *y + 10;
-        return temp;
-      }   
+//       int addByAddress(int *x, int *y){
+//         int temp = *x + *y;
+//         *x = *x + 10;
+//         *y = *y + 10;
+//         return temp;
+//       }   
 
-};
+// };
 
-int main(){
-  Addition obj;
+// int main(){
+//   Addition obj;
 
-  cout << "Enter two numbers: ";
-  int a,b;
-  cin >> a >> b;
+//   cout << "Enter two numbers: ";
+//   int a,b;
+//   cin >> a >> b;
   
  
-cout << "\nBy Value Sum: " << obj.addByValue(a, b) << endl;
-cout << "a = " << a << ", b = " << b << endl;
+// cout << "\nBy Value Sum: " << obj.addByValue(a, b) << endl;
+// cout << "a = " << a << ", b = " << b << endl;
 
-cout << "\nBy Reference Sum: " << obj.addByReference(a, b) << endl;
-cout << "a = " << a << ", b = " << b << endl;
+// cout << "\nBy Reference Sum: " << obj.addByReference(a, b) << endl;
+// cout << "a = " << a << ", b = " << b << endl;
 
-cout << "\nBy Address Sum: " << obj.addByAddress(&a, &b) << endl;
-cout << "a = " << a << ", b = " << b << endl;
+// cout << "\nBy Address Sum: " << obj.addByAddress(&a, &b) << endl;
+// cout << "a = " << a << ", b = " << b << endl;
 
-return 0;
+// return 0;
 
-}
+// }
  
+
+#include <iostream>
+using namespace std;
+
+// Call by Value
+void callByValue(int x) {
+    x = x + 10;
+    cout << "Inside Call by Value: " << x << endl;
+}
+
+// Call by Reference
+void callByReference(int &x) {
+    x = x + 10;
+    cout << "Inside Call by Reference: " << x << endl;
+}
+
+// Call by Address
+void callByAddress(int *x) {
+    *x = *x + 10;
+    cout << "Inside Call by Address: " << *x << endl;
+}
+
+int main() {
+    int a = 45, b = 21, c = 34;
+
+    cout << "Initial Values:" << endl;
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+    cout << "c = " << c << endl;
+
+    cout << "\n--- Call by Value ---" << endl;
+    callByValue(a);
+    cout << "After function: a = " << a << endl;
+
+    cout << "\n--- Call by Reference ---" << endl;
+    callByReference(b);
+    cout << "After function: b = " << b << endl;
+
+    cout << "\n--- Call by Address ---" << endl;
+    callByAddress(&c);
+    cout << "After function: c = " << c << endl;
+
+    return 0;
+}
 
