@@ -1,3 +1,5 @@
+//Write a class Complex to excute two Complex numbers and return their sum.
+
 #include <iostream>
 using namespace std;
 
