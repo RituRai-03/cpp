@@ -18,23 +18,37 @@ class marks{
         intmarks=im; extmarks=em;
       }
 
-      marks operator+(marks m)
-    { 
-    marks temp;
-    temp.intmarks = intmarks + m.intmarks;
-    temp.extmarks = extmarks + m.extmarks;
-    return temp;
-   }
+    //   marks operator+(marks m)
+    // { 
+    // marks temp;
+    // temp.intmarks = intmarks + m.intmarks;
+    // temp.extmarks = extmarks + m.extmarks;
+    // return temp;
+  //  }
 
       void display()
       {
         cout << intmarks<< endl << extmarks;
       }
+
+   marks operator -(marks m);
+ };
+
+marks marks :: operator -(marks m)
+
+{
+  marks temp;
+  temp.intmarks = intmarks - m.intmarks;
+  temp.extmarks = extmarks - m.extmarks;
+  return temp;
 };
 
 int main()
 {
-    marks m1(20,25), m2(30,32);
-    marks m3 =m1 + m2;
-    m3.display();
+    marks m1(20,25), m2(30,32), m4;
+    // marks m3 =m1 + m2;
+
+     m4 = m2 - m1;
+    // m3.display();
+    m4.display();
 }
