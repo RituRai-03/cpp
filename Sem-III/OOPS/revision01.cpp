@@ -5,23 +5,24 @@ class Marks {
     int marks;
 
     public:
-     Marks(int m){
-        marks = m;
+     Marks(int x){
+        marks = x;
      }
     void showData()
     {
         cout << marks;
     }
 
-    void operator ++(){
+    Marks operator ++(){
         marks += 1;
+        return *this;
     }
 
 };
 int main()
 {
     Marks s1(30);
-    ++s1;
-    s1.showData();
+    // ++s1;
+   (++s1).showData();
 return 0;
 }
